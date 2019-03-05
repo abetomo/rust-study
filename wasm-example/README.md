@@ -50,3 +50,14 @@ wasm-pack test --headless --firefox
 ```
 wasm-pack publish
 ```
+
+# memo
+
+```
+% cargo generate --git https://github.com/rustwasm/wasm-pack-template --name wasm-example
+% cd wasm-example
+% wasm-pack build
+% npm init wasm-app www
+% cd www
+% npm i ../pkg
+```
