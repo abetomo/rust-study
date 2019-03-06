@@ -1,3 +1,8 @@
-import * as wasm from "wasm-example";
+import * as wasm from "wasm-example"
 
-wasm.greet('hoge');
+const message = wasm.greet('hoge')
+console.log(message)
+
+const container = document.getElementsByClassName('container')[0]
+container.textContent = null
+container.insertAdjacentHTML('afterbegin', message)
