@@ -61,3 +61,10 @@ wasm-pack publish
 % cd www
 % npm i ../pkg
 ```
+
+## formatter
+
+```
+% rustup component add rustfmt
+% cargo fmt
+```
