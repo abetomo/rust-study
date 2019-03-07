@@ -68,3 +68,15 @@ wasm-pack publish
 % rustup component add rustfmt
 % cargo fmt
 ```
+
+## unit test
+
+```
+% cargo test
+```
+
+OR
+
+```
+% cargo test --target wasm32-unknown-unknown
+```
