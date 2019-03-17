@@ -1,9 +1,11 @@
 extern crate cfg_if;
+extern crate pulldown_cmark;
 extern crate wasm_bindgen;
 
 mod utils;
 
 use cfg_if::cfg_if;
+use pulldown_cmark::{html, Parser};
 use wasm_bindgen::prelude::*;
 
 cfg_if! {
@@ -26,6 +28,14 @@ pub fn greet(name: &str) -> String {
     let message: String = format!("Hello, {}", name);
     alert(&message);
     return message;
+}
+
+#[wasm_bindgen]
+pub fn markdown_to_html(markdown: &str) -> String {
+    let parser = Parser::new(markdown);
+    let mut html_buf = String::new();
+    html::push_html(&mut html_buf, parser);
+    return format!("{}", html_buf);
 }
 
 #[test]
