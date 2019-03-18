@@ -23,6 +23,11 @@ extern "C" {
     fn alert(s: &str);
 }
 
+#[wasm_bindgen(start)]
+pub fn initialize() {
+    utils::set_panic_hook();
+}
+
 #[wasm_bindgen]
 pub fn greet(name: &str) -> String {
     let message: String = format!("Hello, {}", name);
